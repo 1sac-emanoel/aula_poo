@@ -1,1 +1,222 @@
+- O que é um vetor em C++? Explique com suas palavras.
+  São usados para guardas vários valores do mesmo tipo.
 
+- Qual a diferença entre declarar um vetor com valor fixo e inicializá-lo com valores específicos?
+  Saber a quantidade de memória será usada e melhora o desempenho.
+
+
+- Explique o que significa índice e qual o intervalo válido para um vetor int notas[10];
+  O indice é usado para encontrar um valor; indice válido: 0 até 9
+
+
+- Crie um programa que:
+    Possua um vetor de 5 números inteiros
+    Peça ao usuário para digitar os valores
+    Exiba todos os valores digitados
+
+    #include <iostream>
+using namespace std;
+
+
+int main(){
+
+    // ============================
+    // defining the array length 
+    // ============================
+    int tamanho, n;
+
+    cout << "============================" << endl;
+    cout << "Filling the file" << endl;
+    cout << "============================" << endl;
+    cout << "type the length of the array: ";
+    cin >> tamanho;
+    cout << "\n"<< endl;// jump one line 
+
+    int numeros[tamanho];
+
+    // ============================
+    // asking the user to fill the array
+    // ============================
+    cout << "============================" << endl;
+    for (int i = 0; i < tamanho; i++){
+        cout << "type a integer number: " << endl;
+        cin >> n;
+        numeros[i] = n;
+    }
+    cout << "\n"<< endl; // jump one line 
+
+    // ============================
+    // print the array
+    // ============================
+    cout << "============================" << endl;
+    cout << "The result" << endl;
+    cout << "============================" << endl;
+    int num = 1;
+    for (int i = 0; i < tamanho; i++){
+        cout << "Number "<< num << " = " << numeros[i] << endl;
+        num ++;
+    }
+
+    return 0;
+}
+
+
+- Usando o vetor do exercício anterior, calcule e exiba:
+    A soma total dos números
+    A média aritmética dos valores
+
+    #include <iostream>
+using namespace std;
+
+
+int main(){
+
+    // ============================
+    // defining the array length 
+    // ============================
+    int tamanho, n;
+
+    cout << "============================" << endl;
+    cout << "Filling the file" << endl;
+    cout << "============================" << endl;
+    cout << "type the length of the array: ";
+    cin >> tamanho;
+    cout << "\n"<< endl;// jump one line 
+
+    int numeros[tamanho];
+
+    // ============================
+    // asking the user to fill the array
+    // ============================
+    cout << "============================" << endl;
+    for (int i = 0; i < tamanho; i++){
+        cout << "type an integer number: " << endl;
+        cin >> n;
+        numeros[i] = n;
+    }
+    cout << "\n"<< endl; // jump one line 
+
+    // ============================
+    // print the array
+    // ============================
+    cout << "============================" << endl;
+    cout << "The result" << endl;
+    cout << "============================" << endl;
+    int num = 1;
+    for (int i = 0; i < tamanho; i++){
+        cout << "Number "<< num << " = " << numeros[i] << endl;
+        num ++;
+    }
+    cout << "\n"<< endl; // jump one line 
+
+    cout << "============================" << endl;
+    cout << "The sum of the numbers" << endl;
+    cout << "============================" << endl;
+    int sun;
+    for ( int i = 0; i < tamanho; i++ ){
+        sun += numeros[i];
+    }
+    cout << "The sun is: "<< sun << endl;
+    cout << "\n"<< endl; // jump one line 
+
+    cout << "============================" << endl;
+    cout << "The average " << endl;
+    cout << "============================" << endl;
+    int average = sun / tamanho;
+    cout << "The average is: " << average << endl;
+
+    return 0;
+}
+
+
+- Leia 8 números inteiros para dentro de um vetor e determine:
+    O maior valor e em qual posição ele está
+    O menor valor e em qual posição ele está
+
+    #include <iostream>
+using namespace std;
+
+
+int main(){
+
+    // ============================
+    // defining the array length 
+    // ============================
+    int tamanho, n;
+
+    cout << "============================" << endl;
+    cout << "Filling the file" << endl;
+    cout << "============================" << endl;
+    cout << "type the length of the array: ";
+    cin >> tamanho;
+    cout << "\n"<< endl;// jump one line 
+
+    int numeros[tamanho];
+
+    // ============================
+    // asking the user to fill the array
+    // ============================
+    cout << "============================" << endl;
+    for (int i = 0; i < tamanho; i++){
+        cout << "type a integer number: " << endl;
+        cin >> n;
+        numeros[i] = n;
+    }
+    cout << "\n"<< endl; // jump one line 
+
+    // ============================
+    // print the array
+    // ============================
+    cout << "============================" << endl;
+    cout << "The result" << endl;
+    cout << "============================" << endl;
+    int num = 1;
+    for (int i = 0; i < tamanho; i++){
+        cout << "Number "<< num << " = " << numeros[i] << endl;
+        num ++;
+    }
+    cout << "\n"<< endl; // jump one line 
+
+
+    // ============================
+    // smaller or larger number
+    // ============================
+    int maior;
+    int menor;
+    int index_larger;
+    int index_smaller;
+
+    for ( int i = 0; i < tamanho; i++){
+        if (numeros[i] > maior){
+            maior = numeros[i];
+            index_larger = i;
+        }else if (numeros[i] < menor){
+            menor = numeros[i];
+            index_smaller = i;
+        }}
+
+
+    // ============================
+    // the index of the larger and smaller number
+    // ============================
+    cout << "the larger number is: " << maior << " and its index is: " << index_larger << endl;
+    cout << "the larger number is: " << menor << " and its index is: " << index_smaller << endl;
+
+    return 0;
+}
+
+
+
+- Crie um vetor com 10 números digitados pelo usuário.
+    Depois peça um número X e informe:
+    Se X está no vetor
+    Em qual posição ele aparece pela primeira vez
+    
+
+
+
+- Crie um vetor de 6 nomes (strings).
+    O programa deve:
+    Ler os nomes
+    Perguntar um nome a ser buscado
+    Informar se ele existe no veto
