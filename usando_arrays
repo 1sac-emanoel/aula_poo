@@ -277,3 +277,80 @@ int main(){
     Ler os nomes
     Perguntar um nome a ser buscado
     Informar se ele existe no veto
+
+  
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+int main(){
+
+    // ============================
+    // defining the array length 
+    // ============================
+    int tamanho;
+    string that_name;
+    bool found;
+    int choice;
+
+    cout << "============================" << endl;
+    cout << "Filling the file" << endl;
+    cout << "============================" << endl;
+    cout << "type the length of the array: ";
+    cin >> tamanho;
+    cout << "\n"<< endl;// jump one line 
+
+    string array_nomes[tamanho];
+
+    //asking the name for user
+    for (int i = 0; i< tamanho; i++){
+        cout << "Digite o nome: " << endl;
+        cin >> array_nomes[i];
+    }
+    cout << "\n"<< endl;// jump one line 
+
+
+while (true) {
+    cout << "============================" << endl;
+    cout << "======= NAME SEARCH =======" << endl;
+    cout << "============================" << endl;
+    cout << "1. Search for a name" << endl;
+    cout << "2. Exit" << endl;
+    cout << "Enter your choice: ";
+    cin >> choice;
+    
+    if (choice == 2) {
+        cout << "Goodbye!" << endl;
+        cout << "\n"<< endl;// jump one line 
+        break;
+    }
+    else if (choice == 1) {
+        found = false;
+        cout << "Type the name to search: ";
+        cin >> that_name;
+        cout << "\n"<< endl;// jump one line 
+        
+        for (int i = 0; i < tamanho; i++) {
+            if (that_name == array_nomes[i]) {
+                cout << "Found [" << that_name << "] at index " << i << endl;                
+                found = true;
+                cout << "\n"<< endl;// jump one line 
+                break;
+            } 
+        }
+        
+        if (!found) {
+            cout << "The name wasn't found." << endl;
+            cout << "\n"<< endl;// jump one line 
+        }
+    }
+    else {
+        cout << "Invalid choice!" << endl;
+        cout << "\n"<< endl;// jump one line 
+    }
+}
+
+    system("pause");
+    return 0;
+}
